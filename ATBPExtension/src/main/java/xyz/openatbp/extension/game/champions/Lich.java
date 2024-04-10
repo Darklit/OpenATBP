@@ -407,7 +407,10 @@ public class Lich extends UserActor {
                     if (this.movementLine.getP2().distance(this.target.getLocation()) > 0.1d)
                         this.setPath(
                                 MovementManager.getPath(
-                                        this.parentExt.getRoomHandler(this.room.getId()),
+                                        this.parentExt,
+                                        this.parentExt
+                                                .getRoomHandler(this.room.getId())
+                                                .isPracticeMap(),
                                         this.location,
                                         this.target.getLocation()));
                 }

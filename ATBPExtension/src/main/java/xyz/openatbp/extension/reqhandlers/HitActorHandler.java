@@ -76,7 +76,8 @@ public class HitActorHandler extends BaseClientRequestHandler {
                 Line2D newPath = Champion.getDistanceLine(movementLine, targetDistance);
                 actor.setPath(
                         MovementManager.getPath(
-                                parentExt.getRoomHandler(actor.getRoom().getId()),
+                                parentExt,
+                                parentExt.getRoomHandler(actor.getRoom().getId()).isPracticeMap(),
                                 location,
                                 target.getLocation()));
             } else if (actor.withinRange(target)) {
